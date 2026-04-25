@@ -11,3 +11,9 @@ jobs:
         run: echo "Hello World! The workflow was triggered by a ${{ github.event_name }} event."
       - name: List files in the repository
         run: ls ${{ github.workspace }}
+      - name: install python 
+        uses: actions/setup-python@v6
+        with:
+        python-version: '3.13'
+      - name: install requirements
+        run: pip install -r requirements.txt
